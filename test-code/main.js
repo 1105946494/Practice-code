@@ -1,21 +1,16 @@
-// 节流（一段时间执行一次之后，就不执行第二次）
-let a = 1;
-function throttle(fn, delay) {
-  console.log(`我执行了${a}次`);
-  a = a + 1;
-  let canUse = true;
+function x(fn, time) {
+  let x1 = null;
   return function () {
-    console.log(`内部执行了${a}次`);
-    if (canUse) {
-      fn.apply(this, arguments);
-      canUse = false;
-      setTimeout(() => {
-        canUse = true;
-      }, delay);
+    const content = this;
+    if (x1) {
+      window.clearTimeout(xx1);
     }
+    x1 = setTimeout(() => {
+      fn.apply(content, arguments);
+      x1 = null;
+    }, time);
   };
 }
-
-const throttled = throttle(() => console.log("hi"), 2000);
-throttled();
-throttled();
+let xxx1 = x(() => {
+  console.log("hi");
+});
