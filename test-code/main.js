@@ -1,16 +1,13 @@
-function x(fn, time) {
-  let x1 = null;
-  return function () {
-    const content = this;
-    if (x1) {
-      window.clearTimeout(xx1);
-    }
-    x1 = setTimeout(() => {
-      fn.apply(content, arguments);
-      x1 = null;
-    }, time);
-  };
-}
-let xxx1 = x(() => {
-  console.log("hi");
-});
+var request = new XMLHttpRequest();
+request.open("GET", "/a/b/c?name=ff", true);
+request.onreadystatechange = function () {
+  if (request.readyState === 4 && request.status === 200) {
+    console.log(request.responseText);
+  }
+};
+request.send();
+//简化版
+var request = new XMLHttpRequest();
+request.open("GET", "/a/b/c?name=ff", true);
+request.onload = () => console.log(request.responseText);
+request.send();
