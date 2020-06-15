@@ -1,2 +1,16 @@
+div {
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
